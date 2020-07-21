@@ -6,15 +6,11 @@ import User from './components/user';
 
 const { TabPane } = Tabs;
 
-function callback(key) {
-  console.log(key);
-}
-
 const App = (props) => {
   return (
     <div className="App">
       <h1>Todos And Users</h1>
-      <Tabs defaultActiveKey="1" onChange={callback}>
+      <Tabs defaultActiveKey="1">
         <TabPane tab="Todos" key="todo">
           <Todo />
         </TabPane>

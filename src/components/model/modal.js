@@ -6,9 +6,10 @@ import { TodoForm } from '../forms/todoForm';
 import { UserFrom } from '../forms/userForm';
 
 const PopupModal = ({ addType, addTodo, addUser, data }) => {
+    const dispatch = useDispatch();
+    
     const [visible, setVisible] = useState(false);
     const [loading, setLoading] = useState(false);
-    const dispatch = useDispatch();
     const [form] = Form.useForm();
 
     const onCreate = values => {
