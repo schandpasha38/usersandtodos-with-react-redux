@@ -1,7 +1,7 @@
 import { ADD_TODO, DELETE_TODO, EDIT_TODO } from "../actions/todoActions";
 
 const initialState = {
-    todos: [{ "action": "Todo", "dateadded": "2020-07-17 21:15", "key": 0 }, { "action": "Todo1", "dateadded": "2020-07-17 21:15", "key": 1 }]
+    todos: [{ "action": "Todo", "dateadded": "17-07-2020 21:15", "key": 0 }, { "action": "Todo1", "dateadded": "17-07-2020 21:15", "key": 1 }]
 };
 
 function storeTodosLocally(data) {

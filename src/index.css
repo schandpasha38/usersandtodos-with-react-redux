@@ -1,0 +1,16 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Poppins, Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    font-weight: 400;
+    scroll-behavior: smooth;
+  }

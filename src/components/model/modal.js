@@ -22,7 +22,7 @@ const PopupModal = ({ addType, addTodo, addUser, data }) => {
             if (addType === "Todo") {
                 const fieldsValue = {
                     ...values,
-                    dateadded: values["dateadded"].format("YYYY-MM-DD HH:mm")
+                    dateadded: values["dateadded"].format("DD-MM-YYYY HH:mm")
                 };
                 console.log(fieldsValue)
                 dispatch(addTodo(fieldsValue));
@@ -85,6 +85,7 @@ const PopupModal = ({ addType, addTodo, addUser, data }) => {
                 onClick={() => {
                     setVisible(true);
                 }}
+                className="primary-button"
             >
                 {`Add New ${addType}`}
             </Button>
