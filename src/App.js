@@ -5,6 +5,8 @@ import Todo from './components/todo';
 import User from './components/user';
 import './app.css'
 
+import { UserAddOutlined, FormOutlined } from '@ant-design/icons';
+
 const { TabPane } = Tabs;
 
 const App = (props) => {
@@ -15,10 +17,10 @@ const App = (props) => {
           <h1>Todos And Users</h1>
         </div>
         <Tabs defaultActiveKey="1">
-          <TabPane tab="Todos" key="todo">
+          <TabPane tab={<span><FormOutlined />Todos</span>} key="todo">
             <Todo />
           </TabPane>
-          <TabPane tab="Users" key="users">
+          <TabPane tab={<span><UserAddOutlined />Users</span>} key="users">
             <User />
           </TabPane>
         </Tabs>

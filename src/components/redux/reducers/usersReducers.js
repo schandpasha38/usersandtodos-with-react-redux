@@ -1,8 +1,10 @@
 import { ADD_USER, DELETE_USER, EDIT_USER } from "../actions/userActions";
 
 const initialState = {
-    users: [{ "name": "user", "email": "user@user.com", "key": 0 }, { "name": "user1", "email": "user1@user1.com", "key": 1 }]
+    users: []
 };
+
+// { "name": "user", "email": "user@user.com", "key": 0 }, { "name": "user1", "email": "user1@user1.com", "key": 1 }
 
 function storeUsersLocally(data) {
     try {

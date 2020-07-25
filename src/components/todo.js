@@ -7,6 +7,7 @@ import {
 } from "./redux/actions/todoActions";
 import { useSelector, useDispatch } from "react-redux";
 import PopUpModal from './model/modal';
+import { EditOutlined, DeleteOutlined, SaveOutlined, CloseCircleOutlined } from '@ant-design/icons';
 
 const EditableCell = ({
   editing,
@@ -18,7 +19,7 @@ const EditableCell = ({
   children,
   ...restProps
 }) => {
-  const inputNode = inputType === 'dateadded' ? <Input required type="datetime-local" value={record[dataIndex]}/> : <Input type="text"/>;
+  const inputNode = inputType === 'dateadded' ? <Input required type="datetime-local" value={record[dataIndex]} /> : <Input type="text" minlength="8"/>;
   return (
     <td {...restProps}>
       {editing ? (
@@ -30,7 +31,8 @@ const EditableCell = ({
           rules={[
             {
               required: true,
-              message: `Please Input ${title}!`,
+              message: `Please Input ${title} with minimum 5 characters!`,
+              min: 5,
             },
           ]}
         >
@@ -125,23 +127,23 @@ const Todo = (props) => {
                 marginRight: 8,
               }}
             >
-              Save
+              <SaveOutlined />Save
             </a>
             <Popconfirm title="Sure to cancel?" onConfirm={cancel}>
-              <a>Cancel</a>
+              <a><CloseCircleOutlined />Cancel</a>
             </Popconfirm>
           </span>
         ) : (
             <div>
               <a disabled={editingKey !== ''} onClick={() => edit(record)}>
-                Edit
+              <EditOutlined />Edit
               </a>
               <Divider type="vertical" />
               <Popconfirm
                 title="Sure to delete?"
                 onConfirm={() => dispatch(deleteTodo(record.key))}
               >
-                <a>Delete</a>
+                <a><DeleteOutlined />Delete</a>
               </Popconfirm>
             </div>
           );

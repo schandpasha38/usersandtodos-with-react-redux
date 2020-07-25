@@ -32,7 +32,8 @@ const EditableCell = ({
                     rules={[
                         {
                             required: true,
-                            message: `Please Input ${title}!`,
+                            message: `Please Input ${title} with minimum 5 characters!!`,
+                            min: 5,
                             type: inputValType
                         },
                     ]}

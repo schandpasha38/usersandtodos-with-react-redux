@@ -4,6 +4,7 @@ import { Modal, Form } from 'antd';
 import { useDispatch } from 'react-redux'
 import { TodoForm } from '../forms/todoForm';
 import { UserFrom } from '../forms/userForm';
+import { UserAddOutlined, FormOutlined } from '@ant-design/icons';
 
 const PopupModal = ({ addType, addTodo, addUser, data }) => {
     const dispatch = useDispatch();
@@ -87,7 +88,7 @@ const PopupModal = ({ addType, addTodo, addUser, data }) => {
                 }}
                 className="primary-button"
             >
-                {`Add New ${addType}`}
+                {addType === "User" ? <UserAddOutlined /> : <FormOutlined />}{`Add New ${addType}`}
             </Button>
         </div >
     );
