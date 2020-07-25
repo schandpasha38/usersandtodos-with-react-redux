@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, DatePicker } from 'antd';
+import { Form, Input } from 'antd';
 
 export const TodoForm = ({ form }) => {
     return (
@@ -32,7 +32,7 @@ export const TodoForm = ({ form }) => {
                         message: 'Please Add date and time',
                     },
                 ]}>
-                <DatePicker showTime format="YYYY-MM-DD HH:mm" />
+                <Input required type="datetime-local" />
             </Form.Item>
 
         </Form>

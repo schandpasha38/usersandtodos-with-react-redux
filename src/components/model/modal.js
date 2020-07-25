@@ -22,7 +22,7 @@ const PopupModal = ({ addType, addTodo, addUser, data }) => {
             if (addType === "Todo") {
                 const fieldsValue = {
                     ...values,
-                    dateadded: values["dateadded"].format("DD-MM-YYYY HH:mm")
+                    dateadded: values["dateadded"]
                 };
                 console.log(fieldsValue)
                 dispatch(addTodo(fieldsValue));

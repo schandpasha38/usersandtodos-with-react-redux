@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Table, Input, InputNumber, Popconfirm, Form, Divider } from 'antd';
+import { Table, Input, Popconfirm, Form, Divider } from 'antd';
 import {
   addTodo,
   deleteTodo,
@@ -18,7 +18,7 @@ const EditableCell = ({
   children,
   ...restProps
 }) => {
-  const inputNode = inputType === 'number' ? <InputNumber /> : <Input />;
+  const inputNode = inputType === 'dateadded' ? <Input required type="datetime-local" value={record[dataIndex]}/> : <Input type="text"/>;
   return (
     <td {...restProps}>
       {editing ? (
@@ -159,7 +159,7 @@ const Todo = (props) => {
       ...col,
       onCell: record => ({
         record,
-        inputType: col.dataIndex === 'age' ? 'number' : 'text',
+        inputType: col.dataIndex === 'dateadded' ? 'dateadded' : 'action',
         dataIndex: col.dataIndex,
         title: col.title,
         editing: isEditing(record),

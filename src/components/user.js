@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Input, InputNumber, Popconfirm, Form, Divider } from 'antd';
+import { Table, Input, Popconfirm, Form, Divider } from 'antd';
 import {
     addUser,
     editUser,
@@ -18,7 +18,9 @@ const EditableCell = ({
     children,
     ...restProps
 }) => {
-    const inputNode = inputType === 'number' ? <InputNumber /> : <Input />;
+    console.log(dataIndex)
+    const inputNode = inputType === 'email' ? <Input /> : <Input />;
+    const inputValType = dataIndex === 'email' ? "email" : null
     return (
         <td {...restProps}>
             {editing ? (
@@ -31,6 +33,7 @@ const EditableCell = ({
                         {
                             required: true,
                             message: `Please Input ${title}!`,
+                            type: inputValType
                         },
                     ]}
                 >
@@ -153,7 +156,7 @@ const User = (props) => {
             ...col,
             onCell: record => ({
                 record,
-                inputType: col.dataIndex === 'age' ? 'number' : 'text',
+                inputType: col.dataIndex === 'email' ? 'email' : 'name',
                 dataIndex: col.dataIndex,
                 title: col.title,
                 editing: isEditing(record),
