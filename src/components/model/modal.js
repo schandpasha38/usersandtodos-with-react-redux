@@ -14,7 +14,6 @@ const PopupModal = ({ addType, addTodo, addUser, data }) => {
     const [form] = Form.useForm();
 
     const onCreate = values => {
-        console.log(values)
         setLoading(true)
         async function wait(duration = 1000) {
             await new Promise(resolve => setTimeout(resolve, duration));
@@ -25,11 +24,9 @@ const PopupModal = ({ addType, addTodo, addUser, data }) => {
                     ...values,
                     dateadded: values["dateadded"]
                 };
-                console.log(fieldsValue)
                 dispatch(addTodo(fieldsValue));
             } else {
                 dispatch(addUser(values));
-                console.log("Received values of Todo form: addUser", values);
             }
             setLoading(false)
             setVisible(false);
