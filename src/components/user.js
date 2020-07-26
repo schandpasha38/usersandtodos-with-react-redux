@@ -7,6 +7,7 @@ import {
 } from "./redux/actions/userActions";
 import { useSelector, useDispatch } from "react-redux";
 import PopupModal from './model/modal';
+import { EditOutlined, DeleteOutlined, SaveOutlined, CloseCircleOutlined } from '@ant-design/icons';
 
 const EditableCell = ({
     editing,
@@ -18,7 +19,6 @@ const EditableCell = ({
     children,
     ...restProps
 }) => {
-    console.log(dataIndex)
     const inputNode = inputType === 'email' ? <Input /> : <Input />;
     const inputValType = dataIndex === 'email' ? "email" : null
     return (
@@ -121,26 +121,26 @@ const User = (props) => {
                             href="javascript:;"
                             onClick={() => saveUser(record.key)}
                             style={{
-                                marginRight: 8,
+                                marginRight: 5,
                             }}
                         >
-                            Save
+                            <SaveOutlined/>Save
                 </a>
                         <Popconfirm title="Sure to cancel?" onConfirm={cancel}>
-                            <a>Cancel</a>
+                            <a><CloseCircleOutlined/>Cancel</a>
                         </Popconfirm>
                     </span>
                 ) : (
                         <div>
                             <a disabled={editingKey !== ''} onClick={() => edit(record)}>
-                                Edit
+                            <EditOutlined/>Edit
                   </a>
                             <Divider type="vertical" />
                             <Popconfirm
                                 title="Sure to delete?"
                                 onConfirm={() => dispatch(deleteUser(record.key))}
                             >
-                                <a>Delete</a>
+                                <a><DeleteOutlined/>Delete</a>
                             </Popconfirm>
                         </div>
                     );

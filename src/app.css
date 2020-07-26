@@ -15,6 +15,99 @@
     margin-top: 0.5em;
   }
 
+  .ant-tabs > .ant-tabs-nav, .ant-tabs > div > .ant-tabs-nav {
+    margin: 0;
+  }
+
   .primary-button {
     color: #fff;
   }
+
+  
+  @media only screen and (max-width: 1250px) {
+    .home-container {
+      width: 80%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .ant-divider-vertical {
+      display: none;
+    }
+    .ant-table-cell div a {
+      display: block;
+    }
+    .ant-table-cell span a {
+      display: block !important;
+    }
+  }
+
+
+
+  /* 404 Page */
+
+  .notfound-section {
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .notfound-container {
+    width: 80%;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+  }
+  
+  .notfound-container h1 {
+    font-size: 600%;
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes shake {
+    0% {
+      transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+      transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+      transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+      transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+      transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+      transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+      transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+      transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+      transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+      transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+      transform: translate(1px, -2px) rotate(-1deg);
+    }
+  }
+  
+  @media only screen and (max-width: 991.98px) {
+  }
+  
+  
+  @media only screen and (max-width: 575.98px) {
+  }
+  

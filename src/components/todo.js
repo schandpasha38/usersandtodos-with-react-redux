@@ -53,11 +53,6 @@ const Todo = (props) => {
     setData(todos)
   }, [todos])
 
-
-  useEffect(() => {
-    console.log('mounted')
-  }, []);
-
   const [form] = Form.useForm();
   const [data, setData] = useState(todos);
   const [editingKey, setEditingKey] = useState('');
@@ -124,7 +119,7 @@ const Todo = (props) => {
               href="javascript:;"
               onClick={() => saveTodo(record.key)}
               style={{
-                marginRight: 8,
+                marginRight: 5,
               }}
             >
               <SaveOutlined />Save

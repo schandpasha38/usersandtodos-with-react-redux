@@ -17,7 +17,8 @@ export const UserFrom = ({ form }) => {
                 rules={[
                     {
                         required: true,
-                        message: 'Please Enter Name',
+                        message: 'Please Enter Name with min 5 characters',
+                        min: 5
                     },
                 ]}
             >

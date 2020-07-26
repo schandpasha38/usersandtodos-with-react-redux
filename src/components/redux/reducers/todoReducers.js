@@ -22,7 +22,6 @@ const todoReducer = (state = initialState, action) => {
                 ...state.todos,
                 { ...action.payload, key: state.todos.length }
             ]);
-            console.log("ADD_TODO Called")
             return {
                 ...state,
                 todos: [...state.todos, { ...action.payload, key: state.todos.length }]

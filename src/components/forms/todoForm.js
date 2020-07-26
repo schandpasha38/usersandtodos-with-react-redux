@@ -17,7 +17,8 @@ export const TodoForm = ({ form }) => {
                 rules={[
                     {
                         required: true,
-                        message: 'Please Add date and time',
+                        message: 'Please Add Todo with min 5 characters',
+                        min: 5
                     },
                 ]}
             >
