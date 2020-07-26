@@ -16,7 +16,7 @@ const App = (props) => {
         <div className="home-title">
           <h1>Todos And Users</h1>
         </div>
-        <Tabs defaultActiveKey="1">
+        <Tabs defaultActiveKey="1" type="card">
           <TabPane tab={<span><FormOutlined />Todos</span>} key="todo">
             <Todo />
           </TabPane>

@@ -19,7 +19,7 @@ const EditableCell = ({
   children,
   ...restProps
 }) => {
-  const inputNode = inputType === 'dateadded' ? <Input required type="datetime-local" value={record[dataIndex]} /> : <Input type="text" minlength="8"/>;
+  const inputNode = inputType === 'dateadded' ? <Input required type="datetime-local" value={record[dataIndex]} /> : <Input type="text" minLength="8"/>;
   return (
     <td {...restProps}>
       {editing ? (
